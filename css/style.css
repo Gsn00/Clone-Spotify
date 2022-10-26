@@ -1,0 +1,375 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Gotham';
+}
+
+html, body {
+	height: 100%;
+	background: linear-gradient(rgb(30, 30, 30), rgb(10, 10, 10));
+}
+
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/GothamRounded-Medium.otf');
+}
+
+@font-face {
+	font-family: 'GothamBold';
+	src: url('../fonts/GothamRounded-Bold.otf');
+}
+
+@font-face {
+	font-family: 'GothamLight';
+	src: url('../fonts/GothamRounded-Light.otf');
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(130, 130, 130, 0.6);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(130, 130, 130, 1);
+}
+
+body {
+	display: flex;
+	flex-wrap: wrap;
+	min-width: 720px;
+	overflow-x: hidden;
+}
+
+.sidebar {
+	background-color: black;
+	width: 250px;
+	height: calc(100% - 100px);
+	padding: 5px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.sidebar-logo img {
+	width: 100%;
+	max-width: 250px;
+}
+
+.sidebar-menu {
+	margin: 20px;
+	color: rgb(190, 190, 190);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-size: 14px;
+}
+
+.sidebar-menu svg {
+	margin-right: 20px;
+	font-size: 22px;
+}
+
+.sidebar-menu a {
+	color: rgb(190, 190, 190);
+	text-decoration: none;
+	margin-bottom: 10px;
+}
+
+.sidebar-menu .sidebar-menu-selected {
+	color: white;
+}
+
+.sidebar-menu-selected svg {
+	color: rgb(190, 190, 190);
+}
+
+.sidebar-menu-item {
+	margin-top: 12px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.sidebar-menu-item span {
+	padding: 0 10px;
+}
+
+.sidebar-menu-item img {
+	width: 26px;
+	height: 26px;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.sidebar-menu-component {
+	width: 26px;
+	height: 26px;
+	text-align: center;
+	line-height: 26px;
+	display: inline-block;
+	color: black;
+	background-color: rgb(190, 190, 190);
+	font-size: 20px;
+	border-radius: 2px;
+	font-family: 'GothamLight';
+}
+
+.line {
+	margin-top: 10px;
+	width: 100%;
+	height: 1px;
+	background-color: rgba(190, 190, 190, 0.2);
+}
+
+.sidebar-playlists {
+	padding: 10px 0;
+}
+
+.sidebar-playlists a {
+	margin: 10px 0;
+	display: block;
+}
+
+.sidebar-playlists a:hover {
+	color: white;
+}
+
+.main {
+	min-width: 460px;
+	width: calc(100% - 250px);
+	height: calc(100% - 100px);
+	padding: 15px 50px;
+	overflow-y: auto;
+	color: white;
+}
+
+.main-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.main-row-title {
+	width: 100%;
+}
+
+.main-col {
+	min-width: 160px;
+	width: 15%;
+	background-color: rgba(40, 40, 40, 0.5);
+	border-radius: 8px;
+	padding: 15px;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.main-col:hover {
+	background-color: rgba(50, 50, 50, 1);
+}
+
+.main-col img {
+	width: 100%;
+	border-radius: 4px;
+	box-shadow: 0px 0px 5px 3px rgba(20, 20, 20, 0.5);
+	margin-bottom: 15px;
+}
+
+.main-col h3 {
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+
+.main-col p {
+	font-size: 12px;
+	font-family: 'GothamLight';
+	color: rgb(190, 190, 190);
+	margin-bottom: 15px;
+}
+
+.player {
+	min-width: 720px;
+	width: 100%;
+	height: 100px;
+	padding: 20px;
+	display: flex;
+	border-top: 1px solid rgba(190, 190, 190, 0.2);
+	background-color: rgb(20, 20, 20);
+}
+
+.player-artist {
+	min-width: 210px;
+	width: 20%;
+}
+
+.player-artist div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.player-artist img {
+	max-width: 60px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.player-artist h3 {
+	color: white;
+	display: inline-block;
+	font-weight: normal;
+	font-size: 20px;
+	vertical-align: middle;
+	margin-left: 10px;
+	margin-bottom: 5px;
+	font-family: 'GothamLight';	
+	font-size: 13px;
+}
+
+.player-artist p {
+	color: rgb(130, 130, 130);
+	font-family: 'GothamLight';
+	margin-left: 10px;
+	font-size: 10px;
+}
+
+.player-control {
+	width: 60%;
+	text-align: center;
+}
+
+.player-control-buttons a {
+	color: rgb(190, 190, 190);
+	margin: 8px 10px;
+	font-size: 22px;
+	vertical-align: middle;
+}
+
+#playBtn, #pauseBtn {
+	font-size: 32px;
+	color: white;
+}
+
+.player-control-progress-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60%;
+	margin: 8px auto;
+}
+
+.player-control-progress-container span {
+	color: rgb(190, 190, 190);
+	display: inline-block;
+	margin: 0 10px;
+	font-size: 11px;
+	font-family: 'GothamLight';
+	width: 30px;
+}
+
+.player-control-progress {
+	min-width: 210px;
+	width: 80%;
+	max-width: 600px;
+	height: 4px;
+	position: relative;
+	border-radius: 8px;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: rgb(130, 130, 130);
+	cursor: pointer;
+}
+
+.player-control-progress:hover .player-control-progress-fill {
+	background-color: #1DB954;
+}
+
+.player-control-progress:hover .player-control-progress-pointer {
+	display: block;
+}
+
+.player-control-progress-fill {
+	width: 0%;
+	height: 4px;
+	position: relative;
+	top: 0;
+	left: 0;
+	border-radius: 8px;
+	background-color: white;
+}
+
+.player-control-progress-pointer {
+	display: none;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: white;
+	position: absolute;
+	left: 0%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.player-control-media {
+	width: 20%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: right;
+}
+
+.player-control-media a {
+	color: rgb(190, 190, 190);
+	margin: 8px 10px;
+	font-size: 14px;
+}
+
+.player-control-volume {
+	min-width: 55px;
+	width: 40%;
+	max-width: 600px;
+	height: 4px;
+	position: relative;
+	border-radius: 8px;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: rgb(130, 130, 130);
+	cursor: pointer;
+}
+
+.player-control-volume:hover .player-control-volume-fill {
+	background-color: #1DB954;
+}
+
+.player-control-volume:hover .player-control-volume-pointer {
+	display: block;
+}
+
+.player-control-volume-fill {
+	width: 100%;
+	height: 4px;
+	position: relative;
+	top: 0;
+	left: 0;
+	border-radius: 8px;
+	background-color: white;
+}
+
+.player-control-volume-pointer {
+	display: none;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: white;
+	position: absolute;
+	left: 100%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
